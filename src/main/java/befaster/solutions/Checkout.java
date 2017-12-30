@@ -4,7 +4,8 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class Checkout {
     public static Integer checkout(String skus) {
-          int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
+        
+        int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
       int gc=0,hc=0,ic=0,jc=0,kc=0,lc=0,mc=0,nc=0;
       int oc=0,pc=0,qc=0,rc=0,sc=0,tc=0,uc=0,vc=0,wc=0,xc=0,yc=0,zc=0;
         int c=0;
@@ -160,56 +161,189 @@ public class Checkout {
         int gro=0;
         while(true)
         {
-            boolean s = false,t=false,x=false,y=false,z=false;
+            int s = 0,t=0,x=0,y=0,z=0;
+            int d=0;
             if(sc>0 && ok<3)
             {
-                sc--;
-                ok++;
-                s=true;
+                d=sc-3;
+                if(d<0)
+                {
+                    s=sc;
+                    sc=0;
+                    ok+=s;
+                }
+                else
+                {
+                    sc-=3;
+                    s=3;
+                    ok+=3;
+                }
+                
+                
             }
             if(tc>0 && ok<3)
             {
-                tc--;
-                ok++;
-                t=true;
+                d=tc-3;
+                if(d<0)
+                {
+                    t=tc;
+                    tc=0;
+                    ok+=t;
+                }
+                else
+                {
+                    tc-=3;
+                    t=3;
+                    ok+=3;
+                }
+              
+                
             }
             if(xc>0 && ok<3)
             {
-                x=true;
-                xc--;
-                ok++;
+                 d=xc-3;
+                if(d<0)
+                {
+                    x=xc;
+                    xc=0;
+                    ok+=x;
+                }
+                else
+                {
+                    xc-=3;
+                    x=3;
+                    ok+=3;
+                }
+                
             }
             
             if(yc>0 && ok<3)
             {
-                y=true;
-                yc--;
-                ok++;
+                d=yc-3;
+                if(d<0)
+                {
+                    y=yc;
+                    yc=0;
+                    ok+=y;
+                }
+                else
+                {
+                    yc-=3;
+                    y=3;
+                    ok+=3;
+                }
+               
             }
             
             if(zc>0 && ok<3)
             {
-                z=true;
-                zc--;
-                ok++;
+                 d=zc-3;
+                if(d<0)
+                {
+                    z=zc;
+                    zc=0;
+                    ok+=z;
+                }
+                else
+                {
+                    zc-=3;
+                    z=3;
+                    ok+=3;
+                }
+                
             }
-            if(ok==3)
+            if(ok>=3)
             {
-                price+=(5*45);
+                int extra=ok-3;
+                  
+                price+=(45);
                 ok=0;
+                
+                if(extra>0 && s>0)
+                {
+                   if(s>=extra)
+                   {
+                       s-=extra;
+                       extra=0;
+                       sc+=s;
+                   }
+                   else
+                   {
+                       extra-=s;
+                       
+                   }
+                }
+                
+                if(extra>0 && t>0)
+                {
+                   if(t>=extra)
+                   {
+                       t-=extra;
+                        extra=0;
+                       tc+=t;
+                   }
+                   else
+                   {
+                       extra-=t;
+                       
+                   }
+                }
+                
+                if(extra>0 && x>0)
+                {
+                   if(x>=extra)
+                   {
+                       x-=extra; extra=0;
+                       xc+=x;
+                   }
+                   else
+                   {
+                       extra-=x;
+                       
+                   }
+                }
+                
+                if(extra>0 && y>0)
+                {
+                   if(y>=extra)
+                   {
+                       y-=extra; extra=0;
+                       yc+=y;
+                   }
+                   else
+                   {
+                       extra-=y;
+                       
+                   }
+                }
+                
+                if(extra>0 && z>0)
+                {
+                   if(z>=extra)
+                   {
+                       z-=extra; extra=0;
+                       zc+=z;
+                   }
+                   else
+                   {
+                       extra-=z;
+                       
+                   }
+                }
+              
             }
             else
             {
-                if(s)
-                   sc++;
-                if(t)
-                    tc++;
-                if(x)
-                    xc++;
-                if(y)
-                    yc++;
-                if(z)
-                    zc++;
+                if(s>0)
+                   sc+=s;
+                if(t>0)
+                    tc+=t;
+                if(x>0)
+                    xc+=x;
+                if(y>0)
+                    yc+=y;
+                if(z>0)
+                    zc+=z;
                     
                 break;
             }
