@@ -41,16 +41,19 @@ public class Checkout {
         
         bc=bc-(ec/2);
         
-        /// calculation of bc
-        num=bc/2;
-        price+=num*45;
-        num=bc%2;
-        price+=(num*30);
-        
+        if(bc>0)
+        {
+            /// calculation of bc
+            num=bc/2;
+            price+=num*45;
+            num=bc%2;
+            price+=(num*30);
+        }
         price+=cc*20;
         price+=dc*15;
         
         price+=ec*40;
+        System.out.println(ec);
         return price;
         
     }
