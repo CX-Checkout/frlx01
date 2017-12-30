@@ -173,7 +173,7 @@ public class Checkout {
                 
         num=vc/3;
         price+=num*130;
-        num=vc%5;
+        num=vc%3;
         
         vc=num;
         num=vc/2;
