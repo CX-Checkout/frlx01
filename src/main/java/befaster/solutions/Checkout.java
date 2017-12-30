@@ -4,8 +4,9 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class Checkout {
     public static Integer checkout(String skus) {
-        int ac=0,bc=0,cc=0,dc=0;
+        int ac=0,bc=0,cc=0,dc=0,ec=0;
         int c=0;
+        
         for(int i=0;i<skus.length();i++)
         {
             if(skus.charAt(i)=='A')
@@ -16,9 +17,12 @@ public class Checkout {
                 cc++;
             else if(skus.charAt(i)=='D')
                 dc++;
+            else if(skus.charAt(i)=='E')
+                ec++;
             else
                 c++;
         }
+        
         
         if(c>0)
             return -1;
