@@ -5,7 +5,7 @@ import befaster.runner.SolutionNotImplementedException;
 public class Checkout {
     public static Integer checkout(String skus) {
         
-        int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
+      int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
       int gc=0,hc=0,ic=0,jc=0,kc=0,lc=0,mc=0,nc=0;
       int oc=0,pc=0,qc=0,rc=0,sc=0,tc=0,uc=0,vc=0,wc=0,xc=0,yc=0,zc=0;
         int c=0;
@@ -163,6 +163,24 @@ public class Checkout {
         {
             int s = 0,t=0,x=0,y=0,z=0;
             int d=0;
+            if(zc>0 && ok<3)
+            {
+                 d=zc-3;
+                if(d<0)
+                {
+                    z=zc;
+                    zc=0;
+                    ok+=z;
+                }
+                else
+                {
+                    zc-=3;
+                    z=3;
+                    ok+=3;
+                }
+                
+            }
+            
             if(sc>0 && ok<3)
             {
                 d=sc-3;
@@ -199,23 +217,7 @@ public class Checkout {
               
                 
             }
-            if(xc>0 && ok<3)
-            {
-                 d=xc-3;
-                if(d<0)
-                {
-                    x=xc;
-                    xc=0;
-                    ok+=x;
-                }
-                else
-                {
-                    xc-=3;
-                    x=3;
-                    ok+=3;
-                }
-                
-            }
+           
             
             if(yc>0 && ok<3)
             {
@@ -235,37 +237,53 @@ public class Checkout {
                
             }
             
-            if(zc>0 && ok<3)
+             if(xc>0 && ok<3)
             {
-                 d=zc-3;
+                 d=xc-3;
                 if(d<0)
                 {
-                    z=zc;
-                    zc=0;
-                    ok+=z;
+                    x=xc;
+                    xc=0;
+                    ok+=x;
                 }
                 else
                 {
-                    zc-=3;
-                    z=3;
+                    xc-=3;
+                    x=3;
                     ok+=3;
                 }
                 
             }
+            
             if(ok>=3)
             {
                 int extra=ok-3;
                   
                 price+=(45);
                 ok=0;
-                
+                 if(extra>0 && x>0)
+                {
+                   if(x>=extra)
+                   {
+                       x-=extra; 
+                       xc+=extra;
+                       extra=0;
+                   }
+                   else
+                   {
+                       extra-=x;
+                       
+                   }
+                }
+                 
                 if(extra>0 && s>0)
                 {
                    if(s>=extra)
                    {
                        s-=extra;
-                       extra=0;
-                       sc+=s;
+                      
+                       sc+=extra;
+                        extra=0;
                    }
                    else
                    {
@@ -279,8 +297,9 @@ public class Checkout {
                    if(t>=extra)
                    {
                        t-=extra;
-                        extra=0;
-                       tc+=t;
+                        
+                       tc+=extra;
+                       extra=0;
                    }
                    else
                    {
@@ -289,26 +308,15 @@ public class Checkout {
                    }
                 }
                 
-                if(extra>0 && x>0)
-                {
-                   if(x>=extra)
-                   {
-                       x-=extra; extra=0;
-                       xc+=x;
-                   }
-                   else
-                   {
-                       extra-=x;
-                       
-                   }
-                }
+               
                 
                 if(extra>0 && y>0)
                 {
                    if(y>=extra)
                    {
-                       y-=extra; extra=0;
-                       yc+=y;
+                       y-=extra; 
+                       yc+=extra;
+                       extra=0;
                    }
                    else
                    {
@@ -321,8 +329,9 @@ public class Checkout {
                 {
                    if(z>=extra)
                    {
-                       z-=extra; extra=0;
-                       zc+=z;
+                       z-=extra;
+                       zc+=extra;
+                       extra=0;
                    }
                    else
                    {
