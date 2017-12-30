@@ -33,6 +33,9 @@ public class Checkout {
         num=ac%3;
         price+=num*50;
         
+        
+        
+        /// calculation of bc
         num=bc/2;
         price+=num*45;
         num=bc%2;
