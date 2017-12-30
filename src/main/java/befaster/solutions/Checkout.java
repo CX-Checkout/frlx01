@@ -4,7 +4,7 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class Checkout {
     public static Integer checkout(String skus) {
-             int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
+           int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
       int gc=0,hc=0,ic=0,jc=0,kc=0,lc=0,mc=0,nc=0;
       int oc=0,pc=0,qc=0,rc=0,sc=0,tc=0,uc=0,vc=0,wc=0,xc=0,yc=0,zc=0;
         int c=0;
@@ -156,12 +156,53 @@ public class Checkout {
         }
         
         price+=rc*50;
-        price+=sc*30;
+        int ok=0;
+        int gro=0;
+        while(true)
+        {
+            if(sc>0 && ok<3)
+            {
+                sc--;
+                ok++;
+            }
+            if(tc>0 && ok<3)
+            {
+                tc--;
+                ok++;
+            }
+            if(xc>0 && ok<3)
+            {
+                xc--;
+                ok++;
+            }
+            
+            if(yc>0 && ok<3)
+            {
+                yc--;
+                ok++;
+            }
+            
+            if(zc>0 && ok<3)
+            {
+                zc--;
+                ok++;
+            }
+            if(ok==3)
+            {
+                price+=(5*45);
+                ok=0;
+            }
+            else
+                break;
+        
+        }
+        
+        price+=sc*20;
         price+=tc*20;
         price+=wc*20;
-        price+=xc*90;
-        price+=yc*10;
-        price+=zc*50;
+        price+=xc*17;
+        price+=yc*20;
+        price+=zc*21;
         
         while(uc>3)
         {
