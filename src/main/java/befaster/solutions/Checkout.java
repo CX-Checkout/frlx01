@@ -23,6 +23,10 @@ public class Checkout {
                 ec++;
             else if(skus.charAt(i)=='F')
                 fc++;
+            else if(skus.charAt(i)=='G')
+                gc++;
+            else if(skus.charAt(i)=='H')
+                hc++;
             else if(skus.charAt(i)=='I')
                 ic++;
             else if(skus.charAt(i)=='J')
