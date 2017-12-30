@@ -5,6 +5,7 @@ import befaster.runner.SolutionNotImplementedException;
 public class Checkout {
     public static Integer checkout(String skus) {
         int ac=0,bc=0,cc=0,dc=0;
+        int c=0;
         for(int i=0;i<skus.length();i++)
         {
             if(skus.charAt(i)=='A')
@@ -13,9 +14,15 @@ public class Checkout {
                 bc++;
             else if(skus.charAt(i)=='C')
                 cc++;
-            else
+            else if(skus.charAt(i)=='D')
                 dc++;
+            else
+                c++;
         }
+        
+        if(c>0)
+            return -1;
+        
         int price=0;
         int num=ac/3;
         price+=num*130;
