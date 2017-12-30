@@ -28,12 +28,18 @@ public class Checkout {
             return -1;
         
         int price=0;
-        int num=ac/3;
+        int num=ac/5;
+        price+=num*200;
+        num=ac%5;
+        
+        ac=num;
+        num=ac/3;
         price+=num*130;
         num=ac%3;
+        
         price+=num*50;
         
-        
+        bc=bc-(ec/2);
         
         /// calculation of bc
         num=bc/2;
@@ -44,6 +50,7 @@ public class Checkout {
         price+=cc*20;
         price+=dc*15;
         
+        price+=ec*40;
         return price;
         
     }
