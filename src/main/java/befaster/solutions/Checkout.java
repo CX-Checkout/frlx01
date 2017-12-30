@@ -4,7 +4,7 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class Checkout {
     public static Integer checkout(String skus) {
-        int ac=0,bc=0,cc=0,dc=0,ec=0;
+       int ac=0,bc=0,cc=0,dc=0,ec=0,fc=0;
         int c=0;
         
         for(int i=0;i<skus.length();i++)
@@ -19,6 +19,8 @@ public class Checkout {
                 dc++;
             else if(skus.charAt(i)=='E')
                 ec++;
+             else if(skus.charAt(i)=='F')
+                fc++;
             else
                 c++;
         }
@@ -53,7 +55,14 @@ public class Checkout {
         price+=dc*15;
         
         price+=ec*40;
-        System.out.println(ec);
+       
+        while(fc>2)
+        {
+            price+=20;
+            fc-=3;
+        }
+        price+=fc*10;
+        //System.out.println(ec);
         return price;
         
     }
